@@ -8,8 +8,8 @@ phases:
       - pip --version
   pre_build:
     commands:
-      - pip install flake8
       - echo "[+] Running tests..."
+      # - flake8 --statistics
       # - python -m pytest tests/ -v
   build:
     commands:
@@ -18,13 +18,7 @@ phases:
   post_build:
     commands:
       - echo "build complete on `date`"
-      - flake8 --statistics
-
-# artifacts:
-#   files:
-#     - packaged.yaml
-#   discard-paths: yes
-
+      
 cache:
   paths:
     - '/root/.cache/pip'
