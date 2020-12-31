@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "[+] Scanning for security vulnerability within dependencies"
+      - python --version
+      - pip --version
+  pre_build:
+    commands:
+      - pip install flake8
+      - echo "[+] Running tests..."
+      - python -m pytest tests/ -v
+  build:
+    commands:
+      - echo "[+] Installing dependencies...."
+      - pip install -r requirements.txt
+  post_build:
+    commands:
+      - echo "build complete on `date`"
+      - flake8
+
+artifacts:
+  files:
+    - packaged.yaml
+  discard-paths: yes
+
+cache:
+  paths:
+    - '/root/.cache/pip'
