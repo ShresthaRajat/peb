@@ -1,31 +1,10 @@
-version: 0.2
-
-#env:
-#variables:
-# key: "There are no variables"
-#parameter-store:
-# key: "There are no variables"
-
 phases:
   pre_build:
     commands:
       - pip install -r requirements.txt
-      # - pip install -e .
   build:
     commands:
       - echo "build"
-      # - pytest tests/unit/
-      # - pytest tests/integration/ -rfs
   post_build:
     commands:
-      - python app.py
-
-#artifacts:
-#files:
-# - We don't currently preserve any artifacts
-#name: $(date +%Y-%m-%d)
-#discard-paths: yes
-#base-directory: location
-#cache:
-#paths:
-# - We don't currently cache anything
+      - echo "post_build"
