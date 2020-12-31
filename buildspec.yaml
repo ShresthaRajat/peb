@@ -13,11 +13,12 @@ phases:
       # - pip install -e .
   build:
     commands:
-      - pytest tests/unit/
-      - pytest tests/integration/ -rfs
+      - echo "build"
+      # - pytest tests/unit/
+      # - pytest tests/integration/ -rfs
   post_build:
     commands:
-      - python setup.py sdist bdist_wheel
+      - python app.py
 
 #artifacts:
 #files:
