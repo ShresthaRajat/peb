@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - echo "build complete on `date`"
-      - flake8
+      - flake8 --statistics
 
 # artifacts:
 #   files:
