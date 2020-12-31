@@ -20,10 +20,10 @@ phases:
       - echo "build complete on `date`"
       - flake8
 
-artifacts:
-  files:
-    - packaged.yaml
-  discard-paths: yes
+# artifacts:
+#   files:
+#     - packaged.yaml
+#   discard-paths: yes
 
 cache:
   paths:
