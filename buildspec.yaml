@@ -6,11 +6,11 @@ version: 0.2
 #parameter-store:
 # key: "There are no variables"
 
-phases:
+phases:git 
   pre_build:
     commands:
       - pip install -r requirements.txt
-      - pip install -e .
+      # - pip install -e .
   build:
     commands:
       - pytest tests/unit/
